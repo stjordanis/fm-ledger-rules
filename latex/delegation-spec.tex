@@ -313,7 +313,7 @@ domain of the accounts mapping.  Does including it aid in clarity?}
   \transitionarrow{deregister stake key}{\var{hk_{sk}}}
   \begin{array}{l}
   \var{stkeys} \setminus \{\var{hk_{sk}}\} \\
-  \{\fun{skAcc}~\var{hk_{sk}}\} \subtractdom \var{accounts} \\
+  \{\var{hk_{sk}}\} \subtractdom \var{accounts} \\
   \{\var{hk_{sk}}\} \subtractdom \var{delegations}
   \end{array}
 }
@@ -380,10 +380,7 @@ domain of the accounts mapping.  Does including it aid in clarity?}
 %
 \begin{equation*}
 \frac{
-  \var{retiring_{now}} = \{ \var{hk_{sp}} \mid
-                            \var{hk_{sp}} \mapsto e \in \var{retiring}, ~
-                            e = \var{epoch}
-                         \}
+  \var{retiring_{now}} = \dom (\var{retiring} \restrictrange \{\var{epoch}\})
 }{
   \begin{array}{r}
     \var{stpools} \\
