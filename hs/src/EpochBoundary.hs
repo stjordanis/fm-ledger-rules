@@ -188,7 +188,7 @@ leaderRew :: Coin -> StakePool -> StakeShare -> StakeShare -> Coin
 leaderRew f@(Coin f') pool (StakeShare sigma) (StakeShare s)
   | f' <= c = f
   | otherwise =
-      floor $ fromIntegral (c + (f' - c)) * (m' + (1 - m') * sigma / s)
+    floor $ fromIntegral (c + (f' - c)) * (m' + (1 - m') * sigma / s)
   where
     (Coin c, m, _) = poolSpec pool
     m' = intervalValue m
